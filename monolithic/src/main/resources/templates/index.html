@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Task Manager Monolith</title>
+    <h4>The thymeleaf template was generated with IA</h4>
+</head>
+<body>
+<h1>Task Manager</h1>
+
+<form th:action="@{/add}" method="post" th:object="${newTask}">
+    <input type="text" th:field="*{title}" placeholder="Nueva tarea"/>
+    <button type="submit">Agregar</button>
+</form>
+
+<ul>
+    <li th:each="task : ${tasks}">
+        <span th:text="${task.title}"></span>
+        <span th:text="${task.completed} ? '✅' : '❌'"></span>
+        <form th:action="@{/complete/{id}(id=${task.id})}" method="post" style="display:inline">
+            <button type="submit">Completar</button>
+        </form>
+    </li>
+</ul>
+</body>
+</html>

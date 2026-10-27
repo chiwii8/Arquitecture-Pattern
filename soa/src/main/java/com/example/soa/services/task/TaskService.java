@@ -9,7 +9,7 @@ import java.util.List;
 /**
  * TaskService.java
  * <p>
- * Description: [Add the description of the class]
+ * Description: Implementation service of the task model.
  *
  * @author aleja
  * @since 12/02/2026
